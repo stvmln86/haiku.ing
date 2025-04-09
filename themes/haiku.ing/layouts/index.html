@@ -1,0 +1,16 @@
+{{ define "main" }}
+    {{ $pagi := .Paginate site.RegularPages.ByDate.Reverse }}
+    {{ $opts := dict "page" . "format" "terse" }}
+
+    {{ range $pagi.Pages }}
+        <article>
+            <h2>
+                <a href="{{ .RelPermalink }}">{{ .Title }}</a>
+            </h2>
+
+            {{ .Content }}
+        </article>
+    {{ end }}
+
+    {{ template "_internal/pagination.html" $opts }}
+{{ end }}

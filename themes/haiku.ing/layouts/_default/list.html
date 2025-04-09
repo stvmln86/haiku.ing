@@ -1,0 +1,22 @@
+{{ define "main" }}
+    <article>
+        <h2>
+            <a href="{{ .RelPermalink }}">{{ .Title }}</a>
+        </h2>
+
+        {{ range .Pages.GroupByDate "January 2006" }}
+            <h3 id="{{ .Key | urlize }}">
+                <a href="#{{ .Key | urlize }}">{{ .Key }}</a>
+            </h3>
+
+            <ul>
+                {{ range .Pages }}
+                    <li>
+                        <a href="{{ .RelPermalink }}">{{ .Title }}</a>
+                        <span> {{ .Date.Format "2 January 2006" }} </span>
+                    </li>
+                {{ end }}
+            </ul>
+        {{ end }}
+    </article>
+{{ end }}

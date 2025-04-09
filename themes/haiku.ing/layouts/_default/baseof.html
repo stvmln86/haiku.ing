@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>{{ partial "title.html" . }}</title>
+        <meta name="color-scheme" content="light dark">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="description" content="{{ site.Params.Description | safeHTML }}">
+
+        {{ with resources.Match "css/*.css" | resources.Concat "style.css" | minify | fingerprint }}
+            <link rel="stylesheet" href="{{ .RelPermalink }}">
+        {{ end }}
+
+        {{ with .OutputFormats.Get "rss" -}}
+            <link rel="alternate" type="application/rss+xml" href="{{ .Permalink }}" title="RSS Feed">
+        {{ end }}
+
+        <link rel="icon" href="/favicon.ico" sizes="32x32">
+        <link rel="icon" href="/icon.svg" type="image/svg+xml">
+        <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+
+        <meta property="og:site_name" content="{{ site.Title }}">
+        <meta property="og:title" content="{{ .Title }}">
+        <meta property="og:type" content="article">
+        <meta property="og:url" content="{{ .Permalink }}">
+
+        {{ site.Params.analytics | safeHTML }}
+    </head>
+
+    <body>
+        <header>
+            <h1> <a href="/">{{ site.Title }}</a> </h1>
+            <nav>
+                <ul>
+                    {{ range site.Params.links }}
+                        <li> <a href="{{ index . 1 }}">{{ index . 0 }}</a> </li>
+                    {{ end }}
+                </ul>
+            </nav>
+        </header>
+
+        <main>
+            {{ block "main" . }} {{ end }}
+        </main>
+
+        <footer>
+            <p> {{ site.Params.footer | markdownify }} </p>
+        </footer>
+    </body>
+</html>
