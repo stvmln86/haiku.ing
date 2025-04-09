@@ -1,0 +1,31 @@
+{
+    admin off
+    email mail@haiku.ing
+}
+
+www.haiku.ing {
+    redir "http://haiku.ing{uri}" permanent
+}
+
+haiku.ing {
+    root * "/var/www/html"
+    encode zstd gzip
+    file_server
+
+    @assets path *.css *.ico *.jpg *.jpeg *.png *.svg *.woff *.woff2
+    handle @assets {
+        header Cache-Control "max-age=604800; must-revalidate"
+    }
+
+    handle_errors {
+        rewrite * "/{err.status_code}.html"
+        file_server
+    }
+
+    header {
+        -Server
+        Content-Security-Policy   "default-src 'self'; script-src https://gc.zgo.at; connect-src https://haikuing.goatcounter.com/count"
+    	Strict-Transport-Security "max-age=31536000; includeSubDomains; preload"
+        X-Content-Type-Options    "nosniff"
+    }
+}
