@@ -1,0 +1,38 @@
+* {
+    box-sizing: border-box;
+}
+
+html {
+    font-family: Charter, "Bitstream Charter", "Sitka Text", Cambria, serif;
+    font-size: 18px;
+    line-height: 1.6rem;
+}
+
+body {
+    max-width: 70ch;
+    padding: 0 1rem;
+    margin: auto;
+}
+
+header {
+    text-align: center;
+}
+
+nav ul {
+    display: flex;
+    justify-content: center;
+    list-style-type: none;
+    padding: 0;
+    gap: 1rem;
+}
+
+main pre,
+main pre code {
+    font-family: Charter, "Bitstream Charter", "Sitka Text", Cambria, serif;
+    font-size: 20px;
+    line-height: 2rem;
+}
+
+footer {
+    text-align: center;
+}
