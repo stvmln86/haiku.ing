@@ -4,7 +4,7 @@ baseURL = "https://haiku.ing/"
 copyright = "© Stephen Malone 2025."
 languageCode = "en-us"
 timeZone = "Australia/Brisbane"
-titleCaseStyle = "none"
+# titleCaseStyle = "none"
 
 [frontmatter]
 date = [":filename"]
@@ -28,17 +28,17 @@ analytics = """
 <script data-goatcounter="https://haikuing.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
 """
 
-links = [
+navigation = [
     [
         "home",
         "/",
     ],
     [
-        "about",
-        "/pages/about/",
+        "about (FIX LINK)",
+        "/about/",
     ],
     [
-        "archives",
+        "archives (FIX LINK)",
         "/posts/",
     ],
     [

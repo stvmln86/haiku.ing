@@ -24,7 +24,7 @@
         <lastBuildDate>{{ (index $pages 0).Date.Format "Mon, 02 Jan 2006 15:04:05 -0700" | safeHTML }}</lastBuildDate>
         <atom:link href="{{ .Permalink }}" rel="self" type="application/rss+xml"/>
 
-        {{ range where $pages "Type" "posts" }}
+        {{ range $pages }}
             <item>
                 <title>{{ .Title }}</title>
                 <author>{{ $aname }}</author>
