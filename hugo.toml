@@ -34,16 +34,20 @@ navigation = [
         "/",
     ],
     [
-        "about (FIX LINK)",
-        "/about/",
+        "about",
+        "/posts/2025/04/openings/",
     ],
     [
-        "archives (FIX LINK)",
+        "archives",
         "/posts/",
     ],
     [
         "bluesky",
         "https://bsky.app/profile/haikuing.bsky.social",
+    ],
+    [
+        "rss",
+        "/index.xml",
     ],
     [
         "email",
