@@ -1,8 +1,19 @@
+:root {
+    --background: light-dark(#fff, #333);
+    --foreground: light-dark(#333, #eee);
+    --link-normal: light-dark(#1e3e9d, #4576ea);
+    --link-visited: light-dark(#442481, #7d52c7);
+    --border: light-dark(#ddd, #222);
+    --metadata: light-dark(#7c7f80, #c4c6c6);
+}
+
 * {
     box-sizing: border-box;
 }
 
 html {
+    background: var(--background);
+    color: var(--foreground);
     font-family: Charter, "Bitstream Charter", "Sitka Text", Cambria, serif;
     font-size: 18px;
     line-height: 1.6rem;
@@ -12,6 +23,14 @@ body {
     max-width: 70ch;
     padding: 0 1rem;
     margin: auto;
+}
+
+a:link {
+    color: var(--link-normal);
+}
+
+a:visited {
+    color: var(--link-visited);
 }
 
 header {
@@ -26,6 +45,12 @@ nav ul {
     gap: 1rem;
 }
 
+main blockquote,
+main pre {
+    border-left: 0.2rem solid var(--border);
+    padding-left: 1rem;
+}
+
 main pre,
 main pre code {
     font-family: Charter, "Bitstream Charter", "Sitka Text", Cambria, serif;
@@ -33,6 +58,16 @@ main pre code {
     line-height: 2rem;
 }
 
+main hgroup p {
+    color: var(--metadata);
+}
+
+main ul span {
+    color: var(--metadata);
+    float: right;
+}
+
 footer {
+    color: var(--metadata);
     text-align: center;
 }
