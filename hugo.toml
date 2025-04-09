@@ -1,0 +1,62 @@
+title = "haiku.ing"
+theme = "haiku.ing"
+baseURL = "https://haiku.ing/"
+copyright = "© Stephen Malone 2025."
+languageCode = "en-us"
+timeZone = "Australia/Brisbane"
+titleCaseStyle = "none"
+
+[frontmatter]
+date = [":filename"]
+
+[markup.goldmark.renderer]
+unsafe = true
+
+[pagination]
+disableAliases = false
+pagerSize = 10
+path = "page"
+
+[params]
+description = "A daily metropolitan haiku journal by Stephen Malone."
+
+footer = """
+© Stephen Malone 2025. Powered by [Hugo](https://gohugo.io).
+"""
+
+analytics = """
+<script data-goatcounter="https://haikuing.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+"""
+
+links = [
+    [
+        "home",
+        "/",
+    ],
+    [
+        "about",
+        "/pages/about/",
+    ],
+    [
+        "archives",
+        "/posts/",
+    ],
+    [
+        "bluesky",
+        "https://bsky.app/profile/haikuing.bsky.social",
+    ],
+    [
+        "email",
+        "mailto:mail@haiku.ing",
+    ],
+]
+
+[params.author]
+name = "Stephen Malone"
+email = "mail@haiku.ing"
+
+[permalinks]
+tag = "/tag/:slug/"
+
+[taxonomies]
+tag = "tags"
