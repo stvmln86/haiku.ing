@@ -46,10 +46,6 @@ navigation = [
         "https://bsky.app/profile/haikuing.bsky.social",
     ],
     [
-        "rss",
-        "/index.xml",
-    ],
-    [
         "email",
         "mailto:mail@haiku.ing",
     ],

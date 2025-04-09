@@ -7,7 +7,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="description" content="{{ site.Params.Description | safeHTML }}">
 
-        {{ with resources.Match "css/*.css" | resources.Concat "style.css" | minify | fingerprint }}
+        {{ with resources.Match "scss/*.scss" | resources.Concat "style.css" | toCSS | minify | fingerprint }}
             <link rel="stylesheet" href="{{ .RelPermalink }}">
         {{ end }}
 
