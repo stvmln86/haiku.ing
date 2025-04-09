@@ -1,0 +1,9 @@
+<hgroup>
+    <h2> <a href="{{ .RelPermalink }}">{{ .Title }}</a> </h2>
+    <span> {{ .Date.Format "Monday 2 January 2006" }} </span>
+    <span>
+        {{ range .Params.tags }}
+            {{ partial "tag.html" . }}
+        {{ end }}
+    </span>
+</hgroup>

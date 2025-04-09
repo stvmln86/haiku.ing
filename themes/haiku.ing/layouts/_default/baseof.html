@@ -11,7 +11,7 @@
             <link rel="stylesheet" href="{{ .RelPermalink }}">
         {{ end }}
 
-        {{ with .OutputFormats.Get "rss" -}}
+        {{ with .OutputFormats.Get "rss" }}
             <link rel="alternate" type="application/rss+xml" href="{{ .Permalink }}" title="RSS Feed">
         {{ end }}
 
@@ -30,10 +30,13 @@
     <body>
         <header>
             <h1> <a href="/">{{ site.Title }}</a> </h1>
+
             <nav>
                 <ul>
                     {{ range site.Params.navigation }}
-                        <li> <a href="{{ index . 1 }}">{{ index . 0 }}</a> </li>
+                        <li>
+                            <a href="{{ index . 1 }}">{{ index . 0 }}</a>
+                        </li>
                     {{ end }}
                 </ul>
             </nav>

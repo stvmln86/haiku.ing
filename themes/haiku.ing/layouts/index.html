@@ -4,11 +4,7 @@
 
     {{ range $pagi.Pages }}
         <article>
-            <h2>
-                <a href="{{ .RelPermalink }}">{{ .Title }}</a>
-                <span> {{ .Date.Format "Monday 2 January 2006" }} </span>
-            </h2>
-
+            {{ partial "post-head.html" . }}
             {{ .Content }}
         </article>
     {{ end }}
