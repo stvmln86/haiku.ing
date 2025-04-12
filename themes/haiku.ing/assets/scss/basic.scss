@@ -74,7 +74,7 @@ body {
             }
 
             pre {
-                border-left: 0.125rem solid black;
+                border-left: 0.125rem solid var(--grey);
                 padding-left: 1rem;
             }
         }
@@ -82,6 +82,7 @@ body {
 }
 
 #site-footer {
+    @include a(var(--grey), var(--grey));
     color: var(--grey);
     text-align: center;
 }
