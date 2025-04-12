@@ -2,7 +2,13 @@
     <article class="post">
         <hgroup class="post-header">
             <h2 class="post-header-title">
-                <a href="{{ .RelPermalink }}">{{ .Title }}</a>
+                {{ if eq .Type "tags" }}
+                    <a href="{{ .RelPermalink }}">#{{ .Title | urlize }}</a>
+                {{ else if eq .Type "posts" }}
+                    <a href="{{ .RelPermalink }}">Archives</a>
+                {{ else }}
+                    <a href="{{ .RelPermalink }}">{{ .Title }}</a>
+                {{ end }}
             </h2>
         </hgroup>
 
@@ -13,8 +19,8 @@
                     <ul>
                         {{ range .Pages }}
                             <li>
-                                <a href="{{ .RelPermalink }}">{{ .Title }}</a>
-                                <span> {{ .Date.Format "2 January 2006" }} </span>
+                                <a class="post-body-list-link" href="{{ .RelPermalink }}">{{ .Title }}</a>
+                                <span class="post-body-list-date"> {{ .Date.Format "2 January 2006" }} </span>
                             </li>
                         {{ end }}
                     </ul>

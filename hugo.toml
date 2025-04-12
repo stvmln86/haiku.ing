@@ -34,6 +34,10 @@ navigation = [
         "/",
     ],
     [
+        "about",
+        "/posts/2025/04/openings/",
+    ],
+    [
         "archives",
         "/posts/",
     ],

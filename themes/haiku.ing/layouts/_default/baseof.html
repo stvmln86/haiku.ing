@@ -7,6 +7,10 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="description" content="{{ site.Params.Description | safeHTML }}">
 
+        {{ range resources.Match "fonts/*.woff2" }}
+            {{ .Publish }}
+        {{ end }}
+
         {{ with resources.Match "scss/*.scss" | resources.Concat "style.css" | toCSS | minify | fingerprint }}
             <link rel="stylesheet" href="{{ .RelPermalink }}">
         {{ end }}
@@ -25,11 +29,11 @@
 
     <body id="site">
         <header id="site-header">
-            <h1 id="site-title">
+            <h1 id="site-header-title">
                 <a href="/">{{ site.Title }}</a>
             </h1>
 
-            <nav id="site-navigation">
+            <nav id="site-header-navigation">
                 <ul>
                     {{ range site.Params.navigation }}
                         <li>
