@@ -15,10 +15,6 @@
             <link rel="alternate" type="application/rss+xml" href="{{ .Permalink }}" title="RSS Feed">
         {{ end }}
 
-        <link rel="icon" href="/favicon.ico" sizes="32x32">
-        <link rel="icon" href="/icon.svg" type="image/svg+xml">
-        <link rel="apple-touch-icon" href="/apple-touch-icon.png">
-
         <meta property="og:site_name" content="{{ site.Title }}">
         <meta property="og:title" content="{{ .Title }}">
         <meta property="og:type" content="article">
@@ -27,11 +23,13 @@
         {{ site.Params.analytics | safeHTML }}
     </head>
 
-    <body>
-        <header>
-            <h1> <a href="/">{{ site.Title }}</a> </h1>
+    <body id="site">
+        <header id="site-header">
+            <h1 id="site-title">
+                <a href="/">{{ site.Title }}</a>
+            </h1>
 
-            <nav>
+            <nav id="site-navigation">
                 <ul>
                     {{ range site.Params.navigation }}
                         <li>
@@ -42,11 +40,11 @@
             </nav>
         </header>
 
-        <main>
+        <main id="site-body">
             {{ block "main" . }} {{ end }}
         </main>
 
-        <footer>
+        <footer id="site-footer">
             <p> {{ site.Params.footer | markdownify }} </p>
         </footer>
     </body>

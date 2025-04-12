@@ -1,22 +1,25 @@
 {{ define "main" }}
-    <article>
-        <h2>
-            <a href="{{ .RelPermalink }}">{{ .Title }}</a>
-        </h2>
+    <article class="post">
+        <hgroup class="post-header">
+            <h2 class="post-header-title">
+                <a href="{{ .RelPermalink }}">{{ .Title }}</a>
+            </h2>
+        </hgroup>
 
-        {{ range .Pages.GroupByDate "January 2006" }}
-            <h3 id="{{ .Key | urlize }}">
-                <a href="#{{ .Key | urlize }}">{{ .Key }}</a>
-            </h3>
-
-            <ul>
-                {{ range .Pages }}
-                    <li>
-                        <a href="{{ .RelPermalink }}">{{ .Title }}</a>
-                        <span> {{ .Date.Format "2 January 2006" }} </span>
-                    </li>
-                {{ end }}
-            </ul>
-        {{ end }}
+        <div class="post-body">
+            <div class="post-body-list">
+                {{ range .Pages.GroupByDate "January 2006" }}
+                    <h3> {{ .Key }} </h3>
+                    <ul>
+                        {{ range .Pages }}
+                            <li>
+                                <a href="{{ .RelPermalink }}">{{ .Title }}</a>
+                                <span> {{ .Date.Format "2 January 2006" }} </span>
+                            </li>
+                        {{ end }}
+                    </ul>
+                </div>
+            {{ end }}
+        </div>
     </article>
 {{ end }}

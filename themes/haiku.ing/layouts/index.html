@@ -3,11 +3,13 @@
     {{ $opts := dict "page" . "format" "terse" }}
 
     {{ range $pagi.Pages }}
-        <article>
-            {{ partial "post-head.html" . }}
-            {{ .Content }}
+        <article class="post">
+            {{ partial "post-header.html" . }}
+            {{ partial "post-body.html"   . }}
         </article>
     {{ end }}
 
-    {{ template "_internal/pagination.html" $opts }}
+    <div class="pagination">
+        {{ template "_internal/pagination.html" $opts }}
+    </div>
 {{ end }}

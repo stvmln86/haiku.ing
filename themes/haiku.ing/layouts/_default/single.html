@@ -1,7 +1,7 @@
 {{ define "main" }}
-    <article>
-        {{ partial "post-head.html" . }}
-        {{ .Content }}
-        {{ partial "post-navs.html" . }}
+    <article class="post">
+        {{ partial "post-header.html" . }}
+        {{ partial "post-body.html"   . }}
+        {{ partial "post-footer.html" . }}
     </article>
 {{ end }}

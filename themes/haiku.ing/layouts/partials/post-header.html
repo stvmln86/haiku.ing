@@ -1,6 +1,9 @@
-<hgroup>
-    <h2> <a href="{{ .RelPermalink }}">{{ .Title }}</a> </h2>
-    <p>
+<hgroup class="post-header">
+    <h2 class="post-header-title">
+        <a href="{{ .RelPermalink }}">{{ .Title }}</a>
+    </h2>
+
+    <p class="post-header-metadata">
         <span> {{ .Date.Format "Monday 2 January 2006" }} </span>
         <span>
             {{ range .Params.tags }}
