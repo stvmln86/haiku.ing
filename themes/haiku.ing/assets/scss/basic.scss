@@ -47,21 +47,27 @@ code {
 }
 
 #site-header {
+    align-items: center;
     background: var(--back);
     border-bottom: var(--double);
-    align-items: center;
+    column-gap: 1rem;
     display: flex;
     justify-content: center;
     margin: 0;
 
     #site-header-title {
         font-size: 1.25rem;
+
+        a {
+            text-decoration: none;
+        }
     }
 
     #site-header-navigation ul {
         display: flex;
         column-gap: 1rem;
         list-style-type: none;
+        padding-left: 0;
     }
 }
 
