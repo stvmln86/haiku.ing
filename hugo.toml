@@ -30,10 +30,6 @@ analytics = """
 
 navigation = [
     [
-        "home",
-        "/",
-    ],
-    [
         "about",
         "/posts/2025/04/openings/",
     ],

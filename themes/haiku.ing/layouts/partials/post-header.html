@@ -3,12 +3,12 @@
         <a href="{{ .RelPermalink }}">{{ .Title }}</a>
     </h2>
 
-    <p class="post-header-metadata">
-        <span> {{ .Date.Format "Monday 2 January 2006" }} </span>
+    <div class="post-header-metadata">
+        <span> {{ .Date.Format "Monday 2 January 2006" }}. </span>
         <span>
             {{ range .Params.tags }}
                 {{ partial "tag.html" . }}
             {{ end }}
         </span>
-    </p>
+    </div>
 </hgroup>
