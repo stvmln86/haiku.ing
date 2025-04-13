@@ -1,8 +1,9 @@
 {{ define "main" }}
-    {{ $pagi := .Paginate site.RegularPages.ByDate.Reverse }}
-    {{ $opts := dict "page" . "format" "terse" }}
+    {{ $pages := where site.RegularPages "Type" "posts" }}
+    {{ $paginator := .Paginate $pages.ByDate.Reverse }}
+    {{ $options := dict "page" . "format" "terse" }}
 
-    {{ range $pagi.Pages }}
+    {{ range $paginator.Pages }}
         <article class="post">
             {{ partial "post-header.html" . }}
             {{ partial "post-body.html"   . }}
@@ -10,6 +11,6 @@
     {{ end }}
 
     <div class="pagination">
-        {{ template "_internal/pagination.html" $opts }}
+        {{ template "_internal/pagination.html" $options }}
     </div>
 {{ end }}

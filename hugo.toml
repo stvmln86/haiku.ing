@@ -31,10 +31,10 @@ analytics = """
 navigation = [
     [
         "about",
-        "/posts/2025/04/openings/",
+        "/pages/about/",
     ],
     [
-        "archives",
+        "posts",
         "/posts/",
     ],
     [

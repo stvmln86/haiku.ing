@@ -4,8 +4,6 @@
             <h2 class="post-header-title">
                 {{ if eq .Type "tags" }}
                     <a href="{{ .RelPermalink }}">#{{ .Title | urlize }}</a>
-                {{ else if eq .Type "posts" }}
-                    <a href="{{ .RelPermalink }}">Archives</a>
                 {{ else }}
                     <a href="{{ .RelPermalink }}">{{ .Title }}</a>
                 {{ end }}
