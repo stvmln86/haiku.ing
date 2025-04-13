@@ -33,7 +33,7 @@ code {
 
 #site {
     @include a(var(--blue), var(--purple));
-    background: var(--back);
+    background-color: var(--back);
     color: var(--fore);
     margin: 0;
     display: flex;
@@ -48,7 +48,7 @@ code {
 
 #site-header {
     align-items: center;
-    background: var(--back);
+    background-color: var(--back);
     border-bottom: var(--double);
     column-gap: 1rem;
     display: flex;
@@ -73,7 +73,7 @@ code {
 
 #site-body {
     .post {
-        background: var(--back);
+        background-color: var(--back);
         border: var(--double);
         margin: 2rem auto;
         max-width: 60ch;
@@ -117,7 +117,7 @@ code {
 
 #site-footer {
     @include a(var(--grey), var(--grey));
-    background: var(--back);
+    background-color: var(--back);
     border-top: var(--double);
     color: var(--grey);
     text-align: center;

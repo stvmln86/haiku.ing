@@ -24,7 +24,7 @@ haiku.ing {
 
     header {
         -Server
-        Content-Security-Policy   "default-src 'self'; script-src https://gc.zgo.at; connect-src https://haikuing.goatcounter.com/count"
+        Content-Security-Policy   "default-src 'self'; img-src 'self' data:; script-src https://gc.zgo.at; connect-src https://haikuing.goatcounter.com/count"
     	Strict-Transport-Security "max-age=31536000; includeSubDomains; preload"
         X-Content-Type-Options    "nosniff"
     }
