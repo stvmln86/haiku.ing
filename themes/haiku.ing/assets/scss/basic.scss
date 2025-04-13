@@ -1,10 +1,10 @@
 :root {
-    --back: light-dark(#fff, #000);
+    --back: light-dark(#fff, #111);
     --fore: light-dark(#333, #eee);
-    --grey: light-dark(#888, #888);
-    --blue: light-dark(#05a, #05a);
-    --purple: light-dark(#50a, #50a);
-    --silver: light-dark(#ccc, #333);
+    --grey: light-dark(#888, #999);
+    --blue: light-dark(#05a, #6be);
+    --purple: light-dark(#50a, #b6e);
+    --silver: light-dark(#ccc, #555);
     --single: 0.1rem solid var(--silver);
     --double: 0.2rem double var(--silver);
 }
