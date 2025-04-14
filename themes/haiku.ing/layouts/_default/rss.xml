@@ -1,16 +1,4 @@
 {{- printf "<?xml version=\"1.0\" encoding=\"utf-8\" standalone=\"yes\"?>" | safeHTML }}
-{{- $pctx := . }}
-{{- if .IsHome }} {{ $pctx = .Site }} {{ end }}
-{{- $pages := slice }}
-{{- if or $.IsHome $.IsSection }}
-{{- $pages = $pctx.RegularPages }}
-{{- else }}
-{{- $pages = $pctx.Pages }}
-{{- end }}
-{{- $limit := .Site.Config.Services.RSS.Limit }}
-{{- if ge $limit 1 }}
-{{- $pages = $pages | first $limit }}
-{{- end }}
 {{ $aname := printf "%s (%s)" site.Params.author.email site.Params.author.name }}
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
     <channel>
@@ -21,10 +9,10 @@
         <link>{{ .Permalink }}</link>
         <managingEditor>{{ $aname }}</managingEditor>
         <webMaster>{{ $aname }}</webMaster>
-        <lastBuildDate>{{ (index $pages 0).Date.Format "Mon, 02 Jan 2006 15:04:05 -0700" | safeHTML }}</lastBuildDate>
+        <lastBuildDate>{{ (index .Pages 0).Date.Format "Mon, 02 Jan 2006 15:04:05 -0700" | safeHTML }}</lastBuildDate>
         <atom:link href="{{ .Permalink }}" rel="self" type="application/rss+xml"/>
 
-        {{ range where $pages "Type" "posts" }}
+        {{ range .Pages }}
             <item>
                 <title>{{ .Title }}</title>
                 <author>{{ $aname }}</author>
