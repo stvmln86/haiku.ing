@@ -4,13 +4,13 @@
     </h2>
 
     {{ if eq .Type "posts" }}
-        <div class="post-header-metadata">
+        <p class="post-header-metadata">
             <span> {{ .Date.Format "Monday 2 January 2006" }}. </span>
             <span>
                 {{ range .Params.tags }}
                     {{ partial "tag.html" . }}
                 {{ end }}
             </span>
-        </div>
+        </p>
     {{ end }}
 </hgroup>
