@@ -11,6 +11,7 @@ haiku.ing {
     root * "/var/www/html"
     encode zstd gzip
     file_server
+    redir /index.xml /posts/index.xml 301
 
     @assets path *.css *.ico *.jpg *.jpeg *.png *.svg *.woff *.woff2
     handle @assets {
