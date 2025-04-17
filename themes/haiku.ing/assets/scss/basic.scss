@@ -6,6 +6,7 @@
     --purple: light-dark(#50a, #b6e);
     --silver: light-dark(#ccc, #555);
     --border: 0.1rem solid var(--silver);
+    --shadow: 0.1rem 0.1rem 0 var(--silver);
 }
 
 @mixin a($normal, $visited) {
@@ -74,7 +75,7 @@ code {
     .post {
         background-color: var(--back);
         border: var(--border);
-        box-shadow: 0.1rem 0.1rem 0 var(--silver);
+        box-shadow: var(--shadow);
         margin: 2rem auto;
         max-width: 60ch;
         padding: 1rem 2rem;
@@ -113,6 +114,21 @@ code {
             .post-footer-navigation {
                 color: var(--grey);
             }
+        }
+    }
+
+    .pagination ul {
+        column-gap: 1rem;
+        display: flex;
+        justify-content: center;
+        list-style-type: none;
+        margin: 2rem auto;
+
+        .page-item {
+            background-color: var(--back);
+            border: var(--border);
+            box-shadow: var(--shadow);
+            padding: 0.5rem 1rem;
         }
     }
 }
