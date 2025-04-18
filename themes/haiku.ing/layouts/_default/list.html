@@ -1,9 +1,18 @@
+{{ define "name" }}
+    {{ if eq .Type "tags" }}
+        {{ .Data.Singular | title }}: {{ .Title }}
+    {{ else }}
+        {{ .Title }}
+    {{ end }}
+{{ end }}
+
 {{ define "main" }}
     <article class="post">
         <hgroup class="post-header">
             <h2 class="post-header-title">
                 {{ if eq .Type "tags" }}
-                    <a href="{{ .RelPermalink }}">#{{ .Title | urlize }}</a>
+                    {{ .Data.Singular | title }}:
+                    <a href="{{ .RelPermalink }}">{{ .Title }}</a>
                 {{ else }}
                     <a href="{{ .RelPermalink }}">{{ .Title }}</a>
                 {{ end }}

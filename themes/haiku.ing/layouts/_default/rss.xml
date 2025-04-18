@@ -2,8 +2,8 @@
 {{ $aname := printf "%s (%s)" site.Params.author.email site.Params.author.name }}
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
     <channel>
-        <title>{{ partial "title.html" . }}</title>
-        <description>{{ partial "title.html" . }} (RSS)</description>
+        <title>{{ site.Title }} · {{ .Title }}</title>
+        <description>{{ site.Title }} · {{ .Title }} - RSS Feed</description>
         <generator>Hugo</generator>
         <language>{{ site.Language.LanguageCode }}</language>
         <link>{{ .Permalink }}</link>

@@ -8,7 +8,7 @@
             <span> {{ .Date.Format "Monday 2 January 2006" }}. </span>
             <span>
                 {{ range .Params.tags }}
-                    {{ partial "tag.html" . }}
+                    <a href="/tags/{{ . | urlize }}">#{{ . | urlize }}</a>
                 {{ end }}
             </span>
         </p>
