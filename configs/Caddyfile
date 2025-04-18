@@ -14,9 +14,7 @@ haiku.ing {
     redir /index.xml /posts/index.xml 301
 
     @assets path *.css *.ico *.jpg *.jpeg *.png *.svg *.woff *.woff2
-    handle @assets {
-        header Cache-Control "max-age=604800; must-revalidate"
-    }
+    header @assets Cache-Control "max-age=604800; must-revalidate"
 
     handle_errors {
         rewrite * "/{err.status_code}.html"
