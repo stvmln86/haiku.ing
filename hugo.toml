@@ -18,7 +18,7 @@ pagerSize = 10
 path = "page"
 
 [params]
-description = "A daily metropolitan haiku journal by Stephen Malone."
+description = "A daily journal of metropolitan haiku by Stephen Malone."
 
 footer = """
 © Stephen Malone 2025. Powered by [Hugo](https://gohugo.io).
